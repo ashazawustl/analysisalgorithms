@@ -14,7 +14,7 @@ def repeated_squaring_poly_eval(n,x):
     for k in range(n+1):
         power = powers(x,k)
         if k!=0:
-            result+=k*term
+            result+=k*power
         else:
             result = 1
     return result
@@ -22,14 +22,17 @@ def repeated_squaring_poly_eval(n,x):
 def runtime():
     n,x = 6,3
     start = time.time()
-    runtime = repeated_squaring_poly_eval(n,x)
+    running = repeated_squaring_poly_eval(n,x)
     end = time.time()
-    print(f"Pn({x}) for n = {n} is {runtime}")
+    print(f"Pn({x}) for n = {n} is {running}")
     print(f"Time: {(end - start) * 1000:.3f} ms\n")
     
-    n,x = 6000,30
+    n,x = 3000,10
     start = time.time()
-    runtime = repeated_squaring_poly_eval(n,x)
+    running = repeated_squaring_poly_eval(n,x)
     end = time.time()
-    print(f"Pn({x}) for n = {n} is {runtime}")
+    print(f"Pn({x}) for n = {n} is {running}")
     print(f"Time: {(end - start):.3f} seconds\n")
+    
+if __name__ == '__main__':
+    runtime()

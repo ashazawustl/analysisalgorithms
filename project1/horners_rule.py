@@ -16,9 +16,12 @@ def runtime():
     print(f"Pn({x}) for n = {n} is {runtime}")
     print(f"Time: {(end - start) * 1000:.3f} ms\n")
     
-    n,x = 6000,30
+    n,x = 3000,10
     start = time.time()
     runtime = horners_rule_poly_eval(n,x)
     end = time.time()
     print(f"Pn({x}) for n = {n} is {runtime}")
     print(f"Time: {(end - start):.3f} seconds\n")
+    
+if __name__ == '__main__':
+    runtime()
